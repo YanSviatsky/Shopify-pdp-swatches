@@ -1,0 +1,27 @@
+    <!-- START pdp swatches injection -->
+    
+    <!-- V2 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Check if we are on a product page
+    if (document.querySelector('.product__title-and-price')) {
+      // Find the target element after which we want to inject the swatch container
+      var targetElement = document.querySelector('.product__title-and-price');
+      if (targetElement) {
+        // Find the swatch container
+        var swatchContainer = document.querySelector('.swatch-container');
+        if (swatchContainer) {
+          // Clone the swatch container to avoid moving it from the original location
+          var clonedSwatchContainer = swatchContainer.cloneNode(true);
+          // Display the cloned swatch container
+          clonedSwatchContainer.style.display = 'flex';
+          // Insert the cloned swatch container after the target element
+          targetElement.parentNode.insertBefore(clonedSwatchContainer, targetElement.nextSibling);
+        }
+      }
+    }
+  });
+</script>
+    <!-- END V2 -->
+
+    <!-- END pdp swatches injection -->
